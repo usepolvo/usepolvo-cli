@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usepolvo-cli"
+version = "0.1.0"
+description = "An all-in-one integration CLI package."
+authors = [
+    { name="Caio Pizzol", email="caio@usepolvo.com" }
+]
+license = { text="MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+entry-points = { "console_scripts" = ["usepolvo = usepolvo_cli.cli:cli"] }
+
+[project.dependencies]
+usepolvo = "*"
+click = "*"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--maxfail=2 -ra"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
