@@ -1,5 +1,2 @@
-bumpversion
-setuptools>=42
-wheel
-build
-twine
+setuptools==70.1.1
+wheel==0.43.0

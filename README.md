@@ -20,9 +20,6 @@ Create a `.env` file with the following content:
 ```env
 # Example configuration for Stripe
 STRIPE_API_KEY=your_encrypted_stripe_api_key
-
-# Encryption key for securing sensitive information
-ENCRYPTION_KEY=your_generated_encryption_key
 ```
 
 ### Configure the API Key for Stripe
