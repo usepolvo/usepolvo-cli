@@ -42,8 +42,12 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Bump up package version
+        id: bumpversion
         run: |
           bump2version patch --verbose
+          VERSION=$(bump2version --dry-run --list src | grep new_version= | sed -r s,"^.*=",,)
+          echo "[debug] new_version=$VERSION"
+          echo "new_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Add and push changes
         run: |
@@ -51,15 +55,6 @@ jobs:
           git push
         env:
           GIT_TOKEN: ${{ secrets.GH_PAT }}
-
-      - name: Create Tag
-        id: bumpversion
-        run: |
-          VERSION=$(bump2version --dry-run --list src | grep new_version= | sed -r s,"^.*=",,)
-          echo "[debug] new_version=$VERSION"
-          git tag v$VERSION
-          git push origin v$VERSION
-          echo "new_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Create Release
         uses: actions/create-release@v1
