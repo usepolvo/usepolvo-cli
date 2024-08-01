@@ -7,7 +7,6 @@ name = "usepolvo-cli"
 version = "0.1.1"
 description = "An all-in-one integration CLI package."
 readme = "README.md"
-readme-content-type = "text/markdown"
 requires-python = ">=3.7"
 dependencies = ["click==8.1.7", "usepolvo==0.1.17"]
 [[project.authors]]

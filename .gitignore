@@ -2,3 +2,5 @@
 Pipfile*
 .vscode/
 __pycache__/
+dist/
+usepolvo_cli.egg-info/
