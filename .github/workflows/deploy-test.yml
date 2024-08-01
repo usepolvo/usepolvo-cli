@@ -49,7 +49,6 @@ jobs:
       - name: Add and push changes
         run: |
           git add .
-          git commit -m "Bump version"
           git push
         env:
           GIT_TOKEN: ${{ secrets.GH_PAT }}
