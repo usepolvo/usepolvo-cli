@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = [ "setuptools>=42", "wheel",]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,7 @@ version = "0.1.4"
 description = "An all-in-one integration CLI package."
 readme = "README.md"
 requires-python = ">=3.7"
-dependencies = ["click==8.1.7", "usepolvo==0.1.17"]
+dependencies = [ "--extra-index-url https://test.pypi.org/simple/", "click==8.1.7", "python-dotenv==1.0.1", "usepolvo==0.1.17",]
 [[project.authors]]
 name = "Caio Pizzol"
 email = "caio@usepolvo.com"
@@ -21,16 +21,16 @@ homepage = "https://github.com/usepolvo/usepolvo-cli"
 repository = "https://github.com/usepolvo/usepolvo-cli"
 documentation = "https://github.com/usepolvo/usepolvo-cli"
 
-[project.entry-points.console_scripts]
-usepolvo = "usepolvo.cli:cli"
-
 [tool.black]
 line-length = 88
 
 [tool.isort]
 profile = "black"
 
+[project.entry-points.console_scripts]
+usepolvo = "usepolvo.cli:cli"
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "--maxfail=2 -ra"
-testpaths = ["tests"]
+testpaths = [ "tests",]
