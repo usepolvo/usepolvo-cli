@@ -1,6 +1,6 @@
 # usepolvo-cli
 
-Version: 0.1.6
+Version: 0.1.7
 
 Unlock the power of seamless integrations with our all-in-one integration package. Enjoy advanced features including asynchronous support, intuitive CLI tools, intelligent rate limiting, efficient caching, robust logging, secure storage, and so much more. Elevate your integration experience today!
 
